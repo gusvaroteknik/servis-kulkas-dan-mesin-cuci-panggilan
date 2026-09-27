@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Kulkas & Mesin Cuci Cikarang — GRATIS Kunjungan!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #165DFF;
+            --secondary: #0891B2;
+            --success: #25D366;
+            --wa-green: #25D366;
+            --wa-dark: #128C7E;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+
+        body {
+            background-color: #F8FAFC;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 1.7rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            margin-top: 0.8rem;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .info-box {
+            background: #E0F2FE;
+            color: #0C4A6E;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .info-box.hours {
+            background: #ECFDF5;
+            color: #065F46;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(22, 93, 255, 0.12);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .features ul {
+            list-style: none;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .features li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li::before {
+            content: "✅ ";
+            font-weight: bold;
+            color: var(--success);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: var(--wa-green);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0.8rem;
+            width: 100%;
+            max-width: 320px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--wa-dark);
+            transform: scale(1.03);
+        }
+
+        .whatsapp-logo {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .phone-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: white;
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0.8rem;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .phone-btn:hover {
+            background: #F0F9FF;
+            transform: scale(1.03);
+        }
+
+        .price-note {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            color: #92400E;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6B7280;
+            font-size: 0.9rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.35rem; }
+            .whatsapp-btn, .phone-btn { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🔧 Service Kulkas & Mesin Cuci Panggilan</h1>
+    <p>Datang ke rumah Anda — Tanpa Biaya Kunjungan!</p>
+    <div class="badge">🆓 GRATIS Pengecekan & Kunjungan</div>
+</header>
+
+<div class="container">
+    <div class="intro">
+        <h2>Solusi Cepat & Terpercaya untuk Elektronik Rumah Anda</h2>
+        <p>Teknisi profesional, berpengalaman, dan bergaransi.</p>
+    </div>
+
+    <div class="info-row">
+        <div class="info-box">📍 Kabupaten Bekasi & Seluruh Wilayah Cikarang</div>
+        <div class="info-box hours">🕐 BUKA 24 JAM — Setiap Hari!</div>
+    </div>
+
+    <div class="services">
+        <div class="service-card">
+            <div class="icon">🧊</div>
+            <h3>Service Kulkas</h3>
+            <p>Kulkas 1 pintu, 2 pintu, showcase, freezer, chiller, dispenser. Segala merk dan tipe ditangani.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🧺</div>
+            <h3>Service Mesin Cuci</h3>
+            <p>Top loading, front loading, 1 & 2 tabung. Perbaikan, perawatan, dan pembersihan menyeluruh.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🚚</div>
+            <h3>Layanan Panggilan</h3>
+            <p>Kami datang ke lokasi Anda — rumah, apartemen, atau kantor di Cikarang & Kab. Bekasi!</p>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>Kenapa Memilih Kami?</h2>
+        <ul>
+            <li>🕐 Buka 24 jam setiap hari, siap melayani kapan saja</li>
+            <li>Gratis kunjungan & pengecekan di tempat Anda</li>
+            <li>Teknisi berpengalaman & terpercaya</li>
+            <li>Harga transparan — konfirmasi langsung via WhatsApp</li>
+            <li>Respon cepat, bisa layani hari yang sama</li>
+            <li>Konsultasi gratis sebelum servis</li>
+            <li>Melayani seluruh Cikarang & Kab. Bekasi</li>
+        </ul>
+    </div>
+
+    <div class="contact-section">
+        <h2>📞 Hubungi Kami — 24 Jam Nonstop!</h2>
+        <p>Daftar harga & estimasi biaya, silakan hubungi via WhatsApp</p>
+        
+        <!-- ✅ Link WhatsApp DIPERBAIKI — format resmi: https://wa.me/angka_tanpa_plus -->
+        <a href="https://wa.me/6281999380200" class="whatsapp-btn" target="_blank">
+            <svg class="whatsapp-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.21 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c0-5.451 4.436-9.888 9.888-9.888a9.82 9.82 0 017.031 2.949 9.82 9.82 0 012.948 7.034c-.004 5.452-4.437 9.889-9.888 9.889m8.417-17.297A11.816 11.816 0 0011.99 0C5.374 0 .548 5.825.543 12.461c0 2.096.547 4.143 1.584 5.973L0 24l5.769-1.51a11.882 11.882 0 006.227 1.654c6.627 0 11.99-5.825 11.995-12.461a11.821 11.821 0 00-3.512-8.468z"/>
+            </svg>
+            WhatsApp
+        </a>
+        <br>
+        <a href="tel:+6281999380200" class="phone-btn">
+            📞 Telepon
+        </a>
+
+        <div class="price-note">
+            <strong>ℹ️ Informasi:</strong><br>
+            • Biaya pengecekan <strong>GRATIS</strong> jika jadi menggunakan jasa<br>
+            • Daftar harga & estimasi biaya: <strong>langsung hubungi via WhatsApp</strong><br>
+            • Harga sparepart terpisah, diinformasikan terlebih dahulu<br>
+            • Buka 24 jam, melayani seluruh Kabupaten Bekasi & Cikarang
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Service Kulkas & Mesin Cuci Cikarang</p>
+    <p>📍 Kabupaten Bekasi & Seluruh Cikarang | 🕐 Buka 24 Jam Setiap Hari</p>
+    <p>📞 +6281999380200 | 💬 Hubungi via WhatsApp untuk harga</p>
+    <p>Melayani dengan jujur, harga transparan</p>
+</footer>
+
+</body>
+</html>

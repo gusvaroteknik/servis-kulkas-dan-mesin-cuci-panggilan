@@ -72,6 +72,21 @@
             margin-bottom: 2.5rem;
         }
 
+        .intro-img {
+            max-width: 500px;
+            margin: 1rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .intro-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
         .info-row {
             display: flex;
             flex-wrap: wrap;
@@ -96,7 +111,7 @@
 
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -104,9 +119,10 @@
         .service-card {
             background: white;
             border-radius: 16px;
-            padding: 2rem;
+            padding: 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
             border-top: 4px solid var(--primary);
         }
 
@@ -115,15 +131,61 @@
             box-shadow: 0 8px 25px rgba(22, 93, 255, 0.12);
         }
 
+        .service-card-img {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #EFF6FF;
+        }
+
+        .service-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 1.5rem;
+        }
+
         .service-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--primary);
         }
 
-        .service-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .gallery-section {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         .features {
@@ -263,6 +325,9 @@
     <div class="intro">
         <h2>Solusi Cepat & Terpercaya untuk Elektronik Rumah Anda</h2>
         <p>Teknisi profesional, berpengalaman, dan bergaransi.</p>
+        <div class="intro-img">
+            <img src="https://images.unsplash.com/photo-1585775347324-41573b959e9d?w=600&h=300&fit=crop" alt="Teknisi Service Kulkas & Mesin Cuci">
+        </div>
     </div>
 
     <div class="info-row">
@@ -272,21 +337,51 @@
 
     <div class="services">
         <div class="service-card">
-            <div class="icon">🧊</div>
-            <h3>Service Kulkas</h3>
-            <p>Kulkas 1 pintu, 2 pintu, showcase, freezer, chiller, dispenser. Segala merk dan tipe ditangani.</p>
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1571175443884-0f7a5e8d0f74?w=400&h=250&fit=crop" alt="Service Kulkas">
+            </div>
+            <div class="service-card-content">
+                <h3>🧊 Service Kulkas</h3>
+                <p>Kulkas 1 pintu, 2 pintu, showcase, freezer, chiller, dispenser. Segala merk dan tipe ditangani.</p>
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="icon">🧺</div>
-            <h3>Service Mesin Cuci</h3>
-            <p>Top loading, front loading, 1 & 2 tabung. Perbaikan, perawatan, dan pembersihan menyeluruh.</p>
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1626806787964-2a8e9b3f5c42?w=400&h=250&fit=crop" alt="Service Mesin Cuci">
+            </div>
+            <div class="service-card-content">
+                <h3>🧺 Service Mesin Cuci</h3>
+                <p>Top loading, front loading, 1 & 2 tabung. Perbaikan, perawatan, dan pembersihan menyeluruh.</p>
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="icon">🚚</div>
-            <h3>Layanan Panggilan</h3>
-            <p>Kami datang ke lokasi Anda — rumah, apartemen, atau kantor di Cikarang & Kab. Bekasi!</p>
+            <div class="service-card-img">
+                <img src="https://www.google.com/search?client=firefox-b-d&hs=ZSNB&sca_esv=435e542d00b0fa3e&sxsrf=APpeQnu9BpYLRFpiAWj2ZBGwrXea7uHbJA:1790525929073&udm=2&fbs=ABfTbFWhXuTwsLiip5v2SuoCb-WKvw96U4GFC393wb6LJGbqj6GE25jrEVrisT6WmhnNaqh36-14ryIUZe2cJsGjj5By97P9yeXjy2Yi5PsuzF9jgMZMMpQEsMHObYNL6voVKENCGK5V7XkDZIEkPajKI-6vUlLK_UOU_R_r7ItIm3BsqktO50aIkXz6ZFLFSo_E7-FfR6yknWDYJ5Ods2gl0WxMK6KmXQ&q=service+kulkas&sa=X&ved=2ahUKEwjki9rvlI-XAxVhyjgGHSWeLSkQtKgLegQIFRAB#sv=CAMSURoyKhBlLWdUbVB6dFpLTkZYdDZNMg5nVG1QenRaS05GWHQ2TToOLThnemN1a25aWWhGRk0gBCoXCgFzEhBlLWdUbVB6dFpLTkZYdDZNGAEwARgHIPmL3OcMSggQARgBIAEoAQ" alt="Layanan Panggilan ke Rumah">
+            </div>
+            <div class="service-card-content">
+                <h3>🚚 Layanan Panggilan</h3>
+                <p>Kami datang ke lokasi Anda — rumah, apartemen, atau kantor di Cikarang & Kab. Bekasi!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <h2>📸 Galeri Layanan Kami</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=300&h=225&fit=crop" alt="Teknisi Profesional">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=225&fit=crop" alt="Peralatan Lengkap">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=225&fit=crop" alt="Service di Tempat">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521791136065-b939f82d5543?w=300&h=225&fit=crop" alt="Hasil Memuaskan">
+            </div>
         </div>
     </div>
 
@@ -327,7 +422,7 @@
         </div>
     </div>
 
-    <!-- 📍 BAGIAN PETA LOKASI SUDAH DIMASUKKAN DI BAWAH INI -->
+    <!-- 📍 BAGIAN PETA LOKASI -->
     <div class="map-section" style="max-width: 1100px; margin: 0 auto 3rem; padding: 0 1rem;">
         <h2 style="text-align: center; color: #165DFF; margin-bottom: 1rem;">📍 Lokasi Kami</h2>
         <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
@@ -348,7 +443,6 @@
             📍 Melayani seluruh area Kabupaten Bekasi & Cikarang
         </p>
     </div>
-    <!-- 📍 AKHIR BAGIAN PETA -->
 
 </div>
 

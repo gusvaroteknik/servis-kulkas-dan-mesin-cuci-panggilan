@@ -175,6 +175,7 @@
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             aspect-ratio: 4/3;
+            background: #EFF6FF;
         }
 
         .gallery-item img {
@@ -186,6 +187,56 @@
 
         .gallery-item:hover img {
             transform: scale(1.05);
+        }
+
+        /* ✅ BAGIAN ULASAN PELANGGAN BARU */
+        .reviews-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .reviews-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--success);
+        }
+
+        .review-stars {
+            color: #F59E0B;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-text {
+            color: #374151;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .review-location {
+            font-size: 0.85rem;
+            color: #6B7280;
         }
 
         .features {
@@ -310,6 +361,7 @@
         @media (max-width: 640px) {
             header h1 { font-size: 1.35rem; }
             .whatsapp-btn, .phone-btn { max-width: 100%; }
+            .reviews-section, .gallery-section, .features, .contact-section { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -325,9 +377,6 @@
     <div class="intro">
         <h2>Solusi Cepat & Terpercaya untuk Elektronik Rumah Anda</h2>
         <p>Teknisi profesional, berpengalaman, dan bergaransi.</p>
-        <div class="intro-img">
-            <img src="https://images.unsplash.com/photo-1585775347324-41573b959e9d?w=600&h=300&fit=crop" alt="Teknisi Service Kulkas & Mesin Cuci">
-        </div>
     </div>
 
     <div class="info-row">
@@ -358,7 +407,7 @@
 
         <div class="service-card">
             <div class="service-card-img">
-                <img src="https://www.google.com/search?client=firefox-b-d&hs=ZSNB&sca_esv=435e542d00b0fa3e&sxsrf=APpeQnu9BpYLRFpiAWj2ZBGwrXea7uHbJA:1790525929073&udm=2&fbs=ABfTbFWhXuTwsLiip5v2SuoCb-WKvw96U4GFC393wb6LJGbqj6GE25jrEVrisT6WmhnNaqh36-14ryIUZe2cJsGjj5By97P9yeXjy2Yi5PsuzF9jgMZMMpQEsMHObYNL6voVKENCGK5V7XkDZIEkPajKI-6vUlLK_UOU_R_r7ItIm3BsqktO50aIkXz6ZFLFSo_E7-FfR6yknWDYJ5Ods2gl0WxMK6KmXQ&q=service+kulkas&sa=X&ved=2ahUKEwjki9rvlI-XAxVhyjgGHSWeLSkQtKgLegQIFRAB#sv=CAMSURoyKhBlLWdUbVB6dFpLTkZYdDZNMg5nVG1QenRaS05GWHQ2TToOLThnemN1a25aWWhGRk0gBCoXCgFzEhBlLWdUbVB6dFpLTkZYdDZNGAEwARgHIPmL3OcMSggQARgBIAEoAQ" alt="Layanan Panggilan ke Rumah">
+                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&h=250&fit=crop" alt="Layanan Panggilan ke Rumah">
             </div>
             <div class="service-card-content">
                 <h3>🚚 Layanan Panggilan</h3>
@@ -367,20 +416,72 @@
         </div>
     </div>
 
+    <!-- 📸 GALERI FOTO KAMU SENDIRI -->
     <div class="gallery-section">
-        <h2>📸 Galeri Layanan Kami</h2>
+        <h2>📸 Hasil Kerja & Layanan Kami</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=300&h=225&fit=crop" alt="Teknisi Profesional">
+                <img src="foto1.jpg" alt="Kompresor Kulkas LG — Sparepart Asli">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=225&fit=crop" alt="Peralatan Lengkap">
+                <img src="foto2.jpg" alt="Showcase Toko — Setelah Servis">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=225&fit=crop" alt="Service di Tempat">
+                <img src="foto3.jpg" alt="Mesin Cuci Samsung Digital Inverter">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1521791136065-b939f82d5543?w=300&h=225&fit=crop" alt="Hasil Memuaskan">
+                <img src="foto4.jpg" alt="Panel Kontrol Mesin Cuci">
+            </div>
+        </div>
+        <p style="text-align:center; margin-top:1rem; color:#64748b; font-size:0.9rem;">
+            💡 Simpan keempat foto kamu dengan nama: <strong>foto1.jpg, foto2.jpg, foto3.jpg, foto4.jpg</strong> di folder yang sama dengan file index.html
+        </p>
+    </div>
+
+    <!-- ⭐ BAGIAN ULASAN PELANGGAN BARU -->
+    <div class="reviews-section">
+        <h2>⭐ Ulasan Pelanggan Kami</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Sangat puas dengan pelayanannya! Kulkas saya yang bermasalah langsung dingin kembali. Teknisinya ramah, datang tepat waktu, dan harganya masuk akal. Terima kasih!"</p>
+                <p class="review-author">— Bu Siti</p>
+                <p class="review-location">📍 Cibatu, Cikarang Selatan</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Mesin cuci Samsung saya bermasalah, diperbaiki dengan cepat dan rapi. Tidak ada biaya tersembunyi. Sangat direkomendasikan untuk warga Cikarang!"</p>
+                <p class="review-author">— Pak Budi</p>
+                <p class="review-location">📍 Cikarang Utara</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Showcase toko saya diperbaiki hari yang sama saat telepon. Respon cepat, buka 24 jam sangat membantu sekali. Harga transparan dan jujur. Langganan deh!"</p>
+                <p class="review-author">— Bu Ani</p>
+                <p class="review-location">📍 Cikarang Pusat</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Datang ke rumah tanpa biaya kunjungan, pengecekannya teliti. Jelaskan kerusakannya dengan mudah dimengerti. Garansi juga diberikan. Terpercaya!"</p>
+                <p class="review-author">— Pak Joko</p>
+                <p class="review-location">📍 Serang, Cikarang Selatan</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Bisa dipanggil malam hari sangat membantu! Kulkas mati mendesak, langsung ditangani. Hasilnya awet, sudah 2 bulan masih berfungsi sempurna."</p>
+                <p class="review-author">— Bu Rina</p>
+                <p class="review-location">📍 Pasir Sari, Cikarang Selatan</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Pertama kali pakai jasa ini, sangat profesional. Sparepart yang diganti berkualitas. Harga dikonfirmasi dulu sebelum dikerjakan. Sangat memuaskan!"</p>
+                <p class="review-author">— Pak Dedi</p>
+                <p class="review-location">📍 Sukadami, Cikarang Selatan</p>
             </div>
         </div>
     </div>
